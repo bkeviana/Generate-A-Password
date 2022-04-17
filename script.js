@@ -16,20 +16,20 @@
 
 
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lower = "abcdefghijklmnopqrstuvwxyz";
-var numbers = "0123456789";
-var special = "!@,#$%&*{}[]/\\+=";
-var chosenCharacters = "";
+let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lower = "abcdefghijklmnopqrstuvwxyz";
+let numbers = "0123456789";
+let special = "!@,#$%&*{}[]/\\+=";
+let chosenCharacters = "";
 // Write password to the #password input
 function writePassword() {
  
 
 
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+    let password = generatePassword();
+    let passwordText = document.querySelector("#password");
    passwordText.value = password;
    
   }
@@ -41,7 +41,7 @@ function generatePassword(){
  
   var result = "";
 
-  var length = prompt("How many characters in your random password? (between 8 and 128)");
+  let length = prompt("How many characters in your random password? (between 8 and 128)");
   if(isNaN(length)){
     alert("You must input a number!");
     return generatePassword()
@@ -51,10 +51,10 @@ function generatePassword(){
     return generatePassword()
   }
 
-  var hasUpper = confirm("Include upper case letters?");
-  var hasLower = confirm("Include lower case letters?");
-  var hasNumbers = confirm("Include any numbers?");
-  var hasSpecial = confirm("Include any special characters?");
+  let hasUpper = confirm("Include upper case letters?");
+  let hasLower = confirm("Include lower case letters?");
+  let hasNumbers = confirm("Include any numbers?");
+  let hasSpecial = confirm("Include any special characters?");
 
   if(!hasUpper&&!hasLower&&!hasNumbers&&!hasSpecial){
     alert("You must at least choose 1 character type!");
