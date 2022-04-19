@@ -39,24 +39,24 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 function generatePassword(){
  
-  var result = "";
+  let result = "";
 
-  let length = prompt("How many characters in your random password? (between 8 and 128)");
+  let length = prompt("How many characters do you want in your secured password? ( choose between 8 and 128)");
   if(isNaN(length)){
-    alert("You must input a number!");
+    alert("You must input a number to be valid!");
     return generatePassword()
   }
   if(length<8 || length> 128){
-    alert("Please choose numbers between 8 - 128!");
+    alert("Please choose a number between 8 - 128!");
     return generatePassword()
   }
 
-  let hasUpper = confirm("Include upper case letters?");
-  let hasLower = confirm("Include lower case letters?");
+  let hasUpperCase = confirm("Include any upper case characters?");
+  let hasLowerCase = confirm("Include any lower case characters?");
   let hasNumbers = confirm("Include any numbers?");
   let hasSpecial = confirm("Include any special characters?");
 
-  if(!hasUpper&&!hasLower&&!hasNumbers&&!hasSpecial){
+  if(!hasUpperCase&&!hasLowerCase&&!hasNumbers&&!hasSpecial){
     alert("You must at least choose 1 character type!");
     return generatePassword()
   }
@@ -76,7 +76,7 @@ function generatePassword(){
     chosenCharacters += special
   }
 
-for (var i = 0; i < length; i++) {
+for (let i = 0; i < length; i++) {
   result += chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
 }
 return result;
