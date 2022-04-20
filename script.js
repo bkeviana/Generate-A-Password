@@ -61,14 +61,14 @@ function generatePassword(){
     return generatePassword()
   }
 
-  if(hasUpper){
+  if(hasUpperCase){
     chosenCharacters += upper
   }
-  if(hasLower){
+  if(hasLowerCase){
     chosenCharacters += lower
   }
 
-  if(hasNumbers) {
+  if(hasNumeric) {
     chosenCharacters += numbers
   }
 
