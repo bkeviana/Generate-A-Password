@@ -20,7 +20,7 @@ let generateBtn = document.querySelector("#generate");
 
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-let numeric = "0123456789";
+let numbers = "0123456789";
 let special = "!@,#$%&*{}[]/\\+=";
 let chosenCharacters = "";
 // Write password to the #password input
@@ -53,22 +53,22 @@ function generatePassword(){
 
   let hasUpperCase = confirm("Do you want to include any upper case characters?");
   let hasLowerCase = confirm("Do you want to include any lower case characters?");
-  let hasNumeric = confirm("Do you want to include any numbers?");
+  let hasNumbers = confirm("Do you want to include any numbers?");
   let hasSpecial = confirm("Do you want to include any special characters? REQUIRED!");
 
-  if(!hasUpperCase&&!hasLowerCase&&!hasNumeric&&!hasSpecial){
+  if(!hasUpperCase&&!hasLowerCase&&!hasNumbers&&!hasSpecial){
     alert("You must at least choose 1 character type!");
     return generatePassword()
   }
 
   if(hasUpperCase){
-    chosenCharacters += upper
+    chosenCharacters += upperCase
   }
   if(hasLowerCase){
-    chosenCharacters += lower
+    chosenCharacters += lowerCase
   }
 
-  if(hasNumeric) {
+  if(hasNumbers) {
     chosenCharacters += numbers
   }
 
