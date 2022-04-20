@@ -16,6 +16,6 @@
   </ul>
   
   <h3> Website: </h3>
-  <p>  https://bkeviana.github.io/Password-Generator/ </p>
+  <p> https://bkeviana.github.io/Generate-A-Password/ </p>
   
   ![Screenshot (11)](https://user-images.githubusercontent.com/99054758/163321842-e99a407c-0713-4c3d-a292-aa47862aaa07.png)
