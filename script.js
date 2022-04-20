@@ -41,7 +41,7 @@ function generatePassword(){
  
   let result = "";
 
-  let length = prompt("How many characters do you want in your secured password? ( choose between 8 and 128)");
+  let length = prompt("How many characters do you want to have in your secured password? ( choose between 8 and 128)");
   if(isNaN(length)){
     alert("You must input a number to be valid!");
     return generatePassword()
@@ -51,10 +51,10 @@ function generatePassword(){
     return generatePassword()
   }
 
-  let hasUpperCase = confirm("Include any upper case characters?");
-  let hasLowerCase = confirm("Include any lower case characters?");
-  let hasNumeric = confirm("Include any numbers?");
-  let hasSpecial = confirm("Include any special characters?");
+  let hasUpperCase = confirm("Do you want to include any upper case characters?");
+  let hasLowerCase = confirm("Do you want to include any lower case characters?");
+  let hasNumeric = confirm("Do you want to include any numbers?");
+  let hasSpecial = confirm("Do you want to include any special characters? REQUIRED!");
 
   if(!hasUpperCase&&!hasLowerCase&&!hasNumeric&&!hasSpecial){
     alert("You must at least choose 1 character type!");
