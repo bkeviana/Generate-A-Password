@@ -58,8 +58,8 @@ function generatePassword(){
     return generatePassword()
   }
 
- if (hasSpecialCharacters === false;){
-  alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=' Try Again!)
+ if (hasSpecialCharacters === false){
+  alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=' Try Again!);
         }
   if(hasUpperCase){
     allCharacters += upperCase
@@ -73,7 +73,7 @@ function generatePassword(){
   }
 
   if(hasSpecialCharacters) {
-    allCharacters += special
+    allCharacters += specialCharacters
   }
 
 for (let i = 0; i < length; i++) {
