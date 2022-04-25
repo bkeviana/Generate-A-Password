@@ -20,8 +20,9 @@ let generateBtn = document.querySelector("#generate");
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
-let special = "!@,#$%&*{}[]/\\+=";
-let chosenCharacters = "";
+let specialCharacters = "!@,#$%&*{}[]/\\+=";
+
+let allCharacters = "upperCase + lowerCase + numbers + specialCharacters";
 
 function writePassword() {
  
@@ -40,11 +41,11 @@ function generatePassword(){
 
   let length = prompt("How many characters do you want to have in your secured password? ( choose between 8 and 128)");
   if(isNaN(length)){
-    alert("You must input a number to be valid!");
+    alert("You must input a number to be valid! Try Again!");
     return generatePassword()
   }
   if(length<8 || length> 128){
-    alert("Please choose a number between 8 - 128!");
+    alert(" Sorry, Try Again. Please choose a number between 8 - 128!");
     return generatePassword()
   }
 
@@ -57,26 +58,26 @@ function generatePassword(){
     return generatePassword()
   }
 
- if (hasSpecialCharacters =false;){
-  alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=')
+ if (hasSpecialCharacters ===false;){
+  alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=' Try Again!)
         }
   if(hasUpperCase){
-    chosenCharacters += upperCase
+    allCharacters += upperCase
   }
   if(hasLowerCase){
-    chosenCharacters += lowerCase
+    allCharacters += lowerCase
   }
 
   if(hasNumericCharacters) {
-    chosenCharacters += numbers
+    allCharacters += numbers
   }
 
   if(hasSpecialCharacters) {
-    chosenCharacters += special
+    allCharacters += special
   }
 
 for (let i = 0; i < length; i++) {
-  result += chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
+  result += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
 }
 return result;
 
