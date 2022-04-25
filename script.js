@@ -22,7 +22,7 @@ let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let specialCharacters = "!@,#$%&*{}[]/\\+=";
 
-let allCharacters = "upperCase + lowerCase + numbers + specialCharacters";
+let allCharacters = "";
 
 function writePassword() {
  
@@ -58,7 +58,7 @@ function generatePassword(){
     return generatePassword()
   }
 
- if (hasSpecialCharacters ===false;){
+ if (hasSpecialCharacters === false;){
   alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=' Try Again!)
         }
   if(hasUpperCase){
