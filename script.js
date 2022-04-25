@@ -21,7 +21,6 @@ let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let specialCharacters = "!@,#$%&*{}[]/\\+=";
-
 let allCharacters = "";
 
 function writePassword() {
@@ -54,12 +53,12 @@ function generatePassword(){
   let hasNumericCharacters = confirm("Do you want to include any numbers?");
   let hasSpecialCharacters = confirm("Do you want to include any special characters? REQUIRED!");
 
-  if(!hasUpperCase)&&(!hasLowerCase)&&(!hasNumericCharacters){
+  if((!hasUpperCase)&&(!hasLowerCase)&&(!hasNumericCharacters)){
     return generatePassword()
   }
 
  if (hasSpecialCharacters = false;){
-  alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=' Try Again!);
+  alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=' Try Again!");
         }
   if(hasUpperCase){
     allCharacters += upperCase
