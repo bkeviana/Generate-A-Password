@@ -37,7 +37,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 function generatePassword(){
  
-  let result = "";
+  let resultPassword = "";
 
   let length = prompt("How many characters do you want to have in your secured password? ( choose between 8 and 128)");
   if(isNaN(length)){
@@ -54,11 +54,11 @@ function generatePassword(){
   let hasNumericCharacters = confirm("Do you want to include any numbers?");
   let hasSpecialCharacters = confirm("Do you want to include any special characters? REQUIRED!");
 
-  if(!hasUpperCase&&!hasLowerCase&&!hasNumericCharacters){
+  if(!hasUpperCase)&&(!hasLowerCase)&&(!hasNumericCharacters){
     return generatePassword()
   }
 
- if (hasSpecialCharacters === false){
+ if (hasSpecialCharacters = false;){
   alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=' Try Again!);
         }
   if(hasUpperCase){
@@ -77,8 +77,8 @@ function generatePassword(){
   }
 
 for (let i = 0; i < length; i++) {
-  result += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
+  resultPassword += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
 }
-return result;
+return resultPassword;
 
 }
