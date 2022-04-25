@@ -53,11 +53,13 @@ function generatePassword(){
   let hasNumericCharacters = confirm("Do you want to include any numbers?");
   let hasSpecialCharacters = confirm("Do you want to include any special characters? REQUIRED!");
 
-  if(!hasUpperCase&&!hasLowerCase&&!hasNumericCharacters&&!hasSpecialCharacters){
-    alert("You must at least choose 1 character type!");
+  if(!hasUpperCase&&!hasLowerCase&&!hasNumericCharacters){
     return generatePassword()
   }
 
+ if (hasSpecialCharacters =false;){
+  alert("You must choose at least one Special Character '!@,#$%&*{}[]/\\+=')
+        }
   if(hasUpperCase){
     chosenCharacters += upperCase
   }
