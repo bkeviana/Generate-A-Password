@@ -39,7 +39,7 @@ function generatePassword(){
   let resultPassword = "";
 
   let length = prompt("How many characters do you want to have in your secured password? ( choose between 8 and 128)");
-  if(NAN(length)){
+  if(isNAN(length)){
     alert("You must input a number to be valid! Try Again!");
     return generatePassword()
   }
