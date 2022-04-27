@@ -19,7 +19,7 @@ let generateBtn = document.querySelector("#generate");
 
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-let numericCharacters = "0123456789";
+let numbers = "0123456789";
 let specialCharacters = "{}[]/\\+=!@,#$%&*";
 let allCharacters = "";
 
@@ -50,14 +50,14 @@ function generatePassword(){
 
   let hasUpperCase = confirm("Do you want to include any upper case characters?");
   let hasLowerCase = confirm("Do you want to include any lower case characters?");
-  let hasNumericCharacters = confirm("Do you want to include any numbers?");
+  let hasNumbers= confirm("Do you want to include any numbers?");
   let hasSpecialCharacters = confirm("Do you want to include any special characters? REQUIRED!");
 
-  if(!hasUpperCase)&&(!hasLowerCase)&&(!hasNumericCharacters){
+  if(hasUpperCase + hasLowerCase + hasNumbers + hasSpecialCharacters){ 
     return generatePassword()
   }
 
- if (hasSpecialCharacters = false){
+ if (hasSpecialCharacters != "{}[]/\\+=!@,#$%&*") {
   alert("You must choose at least one of the '!@,#$%&*{}[]/\\+=' character types. Try Again!");
         }
   if(hasUpperCase){
@@ -68,7 +68,7 @@ function generatePassword(){
   }
 
   if(hasNumericCharacters) {
-    allCharacters += numericCharacters
+    allCharacters += numbers
   }
 
   if(hasSpecialCharacters) {
