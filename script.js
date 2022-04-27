@@ -14,67 +14,71 @@
 //WHEN the password is generated
 //THEN the password is either displayed in an alert or written to the page
 
-
 let generateBtn = document.querySelector("#generate");
 
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
-let specialCharacters = "{}[]/\\+=!@,#$%&*";
+let specialChars = "!@,#$%&*{}[]/\\+=";
 let allCharacters = "";
 
-function writePassword() {
-    let password = generatePassword();
-    let passwordText = document.querySelector("#password");
-   passwordText.value = password;
-   
-  }
 
-generateBtn.addEventListener("click", writePassword);
+function writePassword(){
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
+
+generateBtn.addEventListener("click", writePassword)
+
 function generatePassword(){
  
-  let resultPass = "";
-
-  let length = prompt("How many characters do you want to have in your secured password? ( choose between 8 and 128)");
-  if(isNAN(length)){
+  let result = "";
+  
+  let length = prompt("How many characters do you want to have in your secured password?  choose between 8 and 128");
+  if(isNaN(length)){
     alert("You must type in a number to be valid! Try Again!");
     return generatePassword()
   }
   if(length<8 || length> 128){
-    alert(" Sorry, Try Again. Please choose a number between 8 - 128!");
+    alert("Sorry, Try Again. Please choose a number between 8 - 128!");
     return generatePassword()
   }
-
+ 
   let hasUpperCase = confirm("Do you want to include any upper case characters?");
   let hasLowerCase = confirm("Do you want to include any lower case characters?");
-  let hasNumbers= confirm("Do you want to include any numbers?");
-  let hasSpecialCharacters = confirm("Do you want to include any special characters? REQUIRED!");
+  let hasNumbers = confirm("Do you want to include any numbers?");
+  let hasSpecialChars = confirm("Do you want to include any special characters? REQUIRED!");
 
-  if(!hasUpperCase&&!hasLowerCase&&!hasNumbers&&!hasSpecialCharacters){ 
-    return generatePassword()
-  }
-
- if (hasSpecialCharacters != "{}[]/\\+=!@,#$%&*") {
-  alert("You must choose at least one of the '!@,#$%&*{}[]/\\+=' character types. Try Again!");
-        }
-  if(hasUpperCase){
+  if(hasUpperCase&&hasLowerCase&&hasNumbers&&hasSpecialChars){
+  return generatePassword()
+}
+   else { alert("You must choose at least one of the character types. Try Again!")
+  
+}
+if(hasUpperCase){
     allCharacters += upperCase
   }
   if(hasLowerCase){
     allCharacters += lowerCase
   }
 
-  if(hasNumericCharacters) {
+  if(hasNumbers) {
     allCharacters += numbers
   }
 
-  if(hasSpecialCharacters) {
-    allCharacters += specialCharacters
+  if(hasSpecialChars) {
+    allCharacters += specialChars
   }
 
-for (let i = 0; i < length; i+++) {
-  resultPass += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
+for (let i = 0; i < length; i++) {
+  result += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
 }
-return resultPass;
+return result;
 
 }
+
+
+
+
