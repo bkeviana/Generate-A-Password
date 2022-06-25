@@ -122,6 +122,10 @@ function generatePassword() {
                 result = result + sc;
                 pwdCriteria.pwdLength++;
               }
+             else { 
+    alert("You must have at least one character type, Try Again!")
+  }
+ 
 
               //if the user selected an uppercase letter and there is still room to add characters then
               //randomly grab an uppercase letter from the array and add it to the end of result 
